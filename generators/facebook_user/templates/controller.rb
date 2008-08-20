@@ -17,7 +17,7 @@ module FacebookerAuthentication
       if facebook_session and 
          facebook_session.secured? and 
          !request_is_facebook_tab?
-        self.current_user = <%=class_name%>.for(facebook_session.user.to_i,facebook_session) 
+        self.current_user = <%=class_name%>.for_facebook_id(facebook_session.user.to_i,facebook_session) 
       end
     end
   end

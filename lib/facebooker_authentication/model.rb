@@ -24,7 +24,7 @@ module FacebookerAuthentication
     end
     module ClassMethods
 
-      def for(facebook_id,facebook_session=nil)
+      def for_facebook_id(facebook_id,facebook_session=nil)
     		returning find_or_create_by_facebook_id(facebook_id) do |user|
     			unless facebook_session.nil?
     				user.store_session(facebook_session.session_key) 
