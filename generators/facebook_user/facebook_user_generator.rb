@@ -5,9 +5,9 @@ class FacebookUserGenerator < Rails::Generator::NamedBase
       m.template "user.rb", "app/models/#{file_name}.rb"
       m.directory "lib/facebooker_authentication"
       m.template "controller.rb", "lib/facebooker_authentication/controller.rb"
-      # m.migration_template 'migration.rb', 'db/migrate', :assigns => {
-      #           :migration_name => "Create#{class_name.pluralize.gsub(/::/, '')}"
-      #         }, :migration_file_name => "create_#{file_path.gsub(/\//, '_').pluralize}"
+      m.migration_template 'migration.rb', 'db/migrate', :assigns => {
+                :migration_name => "Create#{class_name.pluralize.gsub(/::/, '')}"
+              }, :migration_file_name => "create_#{file_path.gsub(/\//, '_').pluralize}"
       
     end
     action = nil
