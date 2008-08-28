@@ -21,15 +21,13 @@ module FacebookerAuthentication
     end
     
     def facebook_login_required
-      @after_login_url = request.request_uri
-      debugger
       if ensure_authenticated_to_facebook
         set_current_user
       end
     end
     
-    def after_login_url
-      @after_login_url.blank? ? nil : url_for(:controller=>request.request_uri,:only_path=>true)
+    def after_facebook_login_url
+      url_for(:controller=>request.request_uri,:only_path=>true)
     end
     
     
