@@ -20,7 +20,7 @@ class FacebookUserGenerator < Rails::Generator::NamedBase
       puts " add 'include FacebookerAuthentication::Controller'"
       puts " to your ApplicationController"
       puts ""
-      puts "It should be placed after your call to ensure_authenticated_to_facebook"
+      puts "You can then use the facebook_login_required filter to protect methods"
     end
     recorded_session
   end
