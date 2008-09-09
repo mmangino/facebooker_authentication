@@ -27,7 +27,7 @@ module FacebookerAuthentication
     end
     
     def after_facebook_login_url
-      url_for(:controller=>request.request_uri,:only_path=>true)
+      request.request_uri
     end
     
     
